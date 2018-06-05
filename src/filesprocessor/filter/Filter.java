@@ -10,7 +10,7 @@ public abstract class Filter {
 	 * @param file The file to check
 	 * @return true if the file is legal
 	 */
-	abstract boolean isLegal(File file);
+	public abstract boolean isLegal(File file);
 
 //	/**
 //	 * Checks if the line matches any filter
@@ -35,15 +35,20 @@ public abstract class Filter {
 	 * Gets the arguments for the filter
 	 * @param line The line to ..
 	 */
-	abstract void getArgs(String line);
+	public abstract void getArgs(String line);
 
 	/**
 	 *
-	 * filter.not = checkNot(line); <- factory
+	 * filter.not = checkNot(line); <- factory and removes #NOT from the line
 	 * @param line
 	 * @return
 	 */
 	public boolean checkNot(String line) {
 		return false;
+	}
+
+	@Override
+	public String toString() {
+		return getClass().getSimpleName();
 	}
 }

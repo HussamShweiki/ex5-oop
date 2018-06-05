@@ -1,4 +1,4 @@
-package filesprocessor.parse;
+package filesprocessor.section;
 
 import filesprocessor.Type2Exception;
 
