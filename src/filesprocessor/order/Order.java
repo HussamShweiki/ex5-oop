@@ -1,5 +1,7 @@
 package filesprocessor.order;
 
+import filesprocessor.utils.ArrayUtils;
+
 import java.io.File;
 
 public abstract class Order {
@@ -28,7 +30,7 @@ public abstract class Order {
  	 * @return sorted list
 	 */
 	public File[] sortList(File[] files) {
-		return null;
+		return ArrayUtils.getFileListUtils().sort(files, (file1, file2) -> compare(file1, file2) * (inveresed? -1 : 1));
 	}
 
 

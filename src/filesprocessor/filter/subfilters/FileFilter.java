@@ -15,21 +15,6 @@ public class FileFilter extends Filter {
 
     @Override
     public void getArgs(String line) {
-        String strRegex = "#.+$";
-        Pattern pattern = Pattern.compile(strRegex);
-        Matcher matcher = pattern.matcher(line);
-        if (matcher.find()){
-            String answer = matcher.group().substring(1);
-            ans = answer.replace()
-            System.out.println(ans);
-        }
-
-
-
-    }
-
-    public static void main(String[] args) {
-        FileFilter file = new FileFilter();
-        file.getArgs("#hussam.txt#da#");
+       ans = Filter.parseString(line);
     }
 }

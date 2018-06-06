@@ -10,22 +10,11 @@ public class Prefix extends Filter {
     private String ans;
     @Override
     public boolean isLegal(File file) {
-        String fileName = file.getName();
-        String filePrefix = fileName.replaceFirst("[.][^.]+$", "");
-        return filePrefix.equals(ans);
+    	return file.getName().startsWith(ans);
     }
 
     @Override
     public void getArgs(String line) {
-        String strRegex = "#.+$";
-        Pattern pattern = Pattern.compile(strRegex);
-        Matcher matcher = pattern.matcher(line);
-        if (matcher.find()){
-            String answer = matcher.group().substring(1);
-            ans =answer.replaceFirst("[.][^.]+$", "");
-        }
-
-
-
+        ans = Filter.parseString(line);
     }
 }

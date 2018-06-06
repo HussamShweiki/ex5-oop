@@ -10,25 +10,15 @@ public class Suffix extends Filter {
     private String ans;
     @Override
     public boolean isLegal(File file) {
-        String fileName = file.getName();
+        /*String fileName = file.getName(); TODO move to Type order
         String filePrefix = fileName.replaceFirst("[.][^.]+$", "");
         String fileSuffix = fileName.replace(filePrefix,"");
-        return fileSuffix.equals(ans);
+        return fileSuffix.equals(ans);*/
+        return file.getName().endsWith(ans);
     }
 
     @Override
     public void getArgs(String line) {
-        String strRegex = "#.+$";
-        Pattern pattern = Pattern.compile(strRegex);
-        Matcher matcher = pattern.matcher(line);
-        if (matcher.find()){
-            String answer = matcher.group().substring(1);
-            String prefix =answer.replaceFirst("[.][^.]+$", "");
-            ans = answer.replace(prefix,"");
-            System.out.println(ans);
-        }
-
-
-
+        ans = Filter.parseString(line);
     }
 }

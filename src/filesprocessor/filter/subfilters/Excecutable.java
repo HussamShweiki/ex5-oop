@@ -4,7 +4,7 @@ import filesprocessor.filter.Filter;
 
 import java.io.File;
 
-public class Hidden extends Filter {
+public class Excecutable extends Filter {
 
 	private boolean arg;
 
@@ -16,7 +16,7 @@ public class Hidden extends Filter {
 	 */
 	@Override
 	public boolean isLegal(File file) {
-		return file.isHidden() == arg;
+		return file.canExecute() == arg;
 	}
 
 	/**

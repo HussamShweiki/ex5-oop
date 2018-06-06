@@ -59,4 +59,9 @@ public class FileUtils {
 		}
 		return array;
 	}
+
+//	public static String getType(File file) {
+//		String name = file.getName();
+//		if (!name.contains(".") || )
+//	}
 }

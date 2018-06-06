@@ -12,6 +12,9 @@ import filesprocessor.order.suborders.Abs;
 import filesprocessor.section.BadSectionException;
 import filesprocessor.section.RawSection;
 import filesprocessor.section.Section;
+import filesprocessor.utils.FileUtils;
+
+import java.util.ArrayList;
 
 public class Parser {
 
@@ -51,5 +54,15 @@ public class Parser {
 		section.filter = filter;
 		section.order = order;
 		return section;
+	}
+
+	public static Section[] parseSections(String filePath) throws BadSectionException {
+		ArrayList<RawSection> rawSections = FileUtils.readCommandFile(filePath);
+		ArrayList<Section> sections = new ArrayList<>();
+
+		for (RawSection rawSection : rawSections) {
+			sections.add(parseSection(rawSection));
+		}
+		return sections.toArray(new Section[0]);
 	}
 }
