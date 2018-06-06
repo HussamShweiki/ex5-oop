@@ -1,6 +1,8 @@
 package filesprocessor.factory;
 
+import filesprocessor.order.BadOrderException;
 import filesprocessor.order.Order;
+import filesprocessor.order.suborders.Abs;
 
 public class OrderFactory {
 
@@ -9,12 +11,14 @@ public class OrderFactory {
 	 * @param line
 	 * @return
 	 */
-	public static Order create(String line) {
+	public static Order create(String line) throws BadOrderException {
 		/*
 		if (line.match(order1))
 			return new order1;
 		 */
-		return null;
+
+//		throw new BadOrderException();
+		return Abs.getInstance();
 
 	}
 }

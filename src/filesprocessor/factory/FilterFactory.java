@@ -1,5 +1,6 @@
 package filesprocessor.factory;
 
+import filesprocessor.filter.BadFilterExcdeption;
 import filesprocessor.filter.Filter;
 
 public class FilterFactory {
@@ -9,7 +10,8 @@ public class FilterFactory {
 	 * @param line
 	 * @return
 	 */
-	public static Filter create(String line) {
-		return null;
+	public static Filter create(String line) throws BadFilterExcdeption {
+		throw new BadFilterExcdeption();
+//		return null;
 	}
 }

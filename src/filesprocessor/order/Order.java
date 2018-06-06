@@ -1,11 +1,16 @@
 package filesprocessor.order;
 
-import filesprocessor.order.suborder.Abs;
+import filesprocessor.utils.ArrayUtils;
 
 import java.io.File;
 
 public abstract class Order {
-	public boolean inVersed = false;
+
+	public boolean reversed;
+
+	public Order(boolean reversed) {
+		this.reversed = reversed;
+	}
 	/**
 	 * Compares two files
 	 * @param file1 file 1
@@ -16,7 +21,7 @@ public abstract class Order {
 
 	/**
 	 * called by factory
-	 * check if inVersed
+	 * check if reversed
 	 * @param line line
 	 * @return kk
 	 */
@@ -30,8 +35,12 @@ public abstract class Order {
  	 * @return sorted list
 	 */
 	public File[] sortList(File[] files) {
-		return null;
+		return ArrayUtils.getFileListUtils().sort(files, (file1, file2) -> compare(file1, file2) * (reversed ? -1 : 1));
 	}
 
 
+	@Override
+	public String toString() {
+		return getClass().getSimpleName();
+	}
 }

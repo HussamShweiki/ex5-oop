@@ -19,8 +19,7 @@ public class Contains extends Filter {
         Pattern pattern = Pattern.compile(strRegex);
         Matcher matcher = pattern.matcher(line);
         if (matcher.find()){
-            String answer = matcher.group().substring(1);
-            ans =answer.replaceFirst("[.][^.]+$", "");
+	        ans = matcher.group().substring(1);
         }
 
 
