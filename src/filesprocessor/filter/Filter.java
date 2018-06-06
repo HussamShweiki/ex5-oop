@@ -4,6 +4,10 @@ import java.io.File;
 
 public abstract class Filter {
 
+	String booleanRegex = "#(?:YES|NO)$";
+	String strRegex = "#.+$";
+	String doubleRegex = "#\\d*\\.?(?:\\d+)?";
+
 	public boolean not;
 	/**
 	 * Checks if the file is legal
