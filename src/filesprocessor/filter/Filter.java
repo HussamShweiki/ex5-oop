@@ -4,13 +4,17 @@ import java.io.File;
 
 public abstract class Filter {
 
+	String booleanRegex = "#(?:YES|NO)$";
+	String strRegex = "#.+$";
+	String doubleRegex = "#\\d*\\.?(?:\\d+)?";
+
 	public boolean not;
 	/**
 	 * Checks if the file is legal
 	 * @param file The file to check
 	 * @return true if the file is legal
 	 */
-	abstract boolean isLegal(File file);
+	public abstract boolean isLegal(File file);
 
 //	/**
 //	 * Checks if the line matches any filter
@@ -35,7 +39,7 @@ public abstract class Filter {
 	 * Gets the arguments for the filter
 	 * @param line The line to ..
 	 */
-	abstract void getArgs(String line);
+	public abstract void getArgs(String line);
 
 	/**
 	 *

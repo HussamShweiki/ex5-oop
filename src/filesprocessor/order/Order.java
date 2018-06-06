@@ -10,7 +10,7 @@ public abstract class Order {
 	 * @param file2 file 2
 	 * @return 0 if equal, 1 file1 > file2, -1 file1 < file2
 	 */
-	abstract int compare(File file1, File file2);
+	public abstract int compare(File file1, File file2);
 
 	/**
 	 * called by factory
