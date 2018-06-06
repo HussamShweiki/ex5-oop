@@ -20,7 +20,7 @@ public class FileFilter extends Filter {
         Matcher matcher = pattern.matcher(line);
         if (matcher.find()){
             String answer = matcher.group().substring(1);
-            ans = answer.replace()
+            //ans = answer.replace()
             System.out.println(ans);
         }
 
